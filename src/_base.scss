@@ -1,0 +1,186 @@
+/* Breakpoints */
+$mqDesktop: 1440px;
+
+:root {
+    /* Fonts */
+    --fontPrimary: 'Space Mono', monospace;
+    --fontSecondary: 'Montserrat', sans-serif;
+    --fontTertiary: 'Inconsolata', monospace;
+    /* Colors */
+    --white: hsla(0, 0%, 100%, 1);
+    --gray1: hsla(0, 0%, 20%, 1);
+    --gray2: hsla(0, 0%, 31%, 1);
+    --gray3: hsla(0, 0%, 74%, 1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: calc-em(20px) calc-em(24px) calc-em(24px) calc-em(24px);
+    color: var(--gray1);
+
+    @media (min-width: $mqDesktop){
+        text-align: center;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - #{calc-em(20px)} - #{calc-em(24px)});
+
+    @media (min-width: $mqDesktop){
+        margin: 0 auto;
+        max-width: calc-em(1286px);
+        text-align: left;
+    }
+}
+
+.header {
+    padding-bottom: calc-em(64px);
+
+    @media (min-width: $mqDesktop){
+        padding-bottom: calc-em(200px);
+    }
+}
+
+    .page-title {
+        margin: 0;
+        font-family: var(--fontTertiary);
+        font-weight: bold;
+        font-size: calc-em(24px);
+        line-height: 1.04;
+        letter-spacing: -0.08em;
+        text-transform: uppercase;
+    }
+
+.main-content {
+    flex: 1;
+}   
+    
+
+
+    .image-container {
+        margin: 0 calc-em(20px) calc-em(60px);
+
+        @media (min-width: $mqDesktop){
+            margin: 0;
+        }
+
+        > img {
+            width: 100%;
+            height: auto;
+            max-width: calc-em(540px);
+        }
+    }
+
+    .title-1 {
+        font-family: var(--fontPrimary);
+        font-weight: bold;
+        font-size: calc-em(48px);
+        line-height: 1.479;
+        letter-spacing: -0.035em;
+
+        @media (min-width: $mqDesktop){
+            font-size: calc-em(64px);
+            line-height: 1.48;
+            letter-spacing: -0.035em;
+        }
+    }
+
+        
+    .description {
+        font-family: var(--fontPrimary);
+        font-size: calc-em(18px);
+        line-height: 1.5;
+        letter-spacing: -0.035em;
+        color: var(--gray2);
+
+        @media (min-width: $mqDesktop){
+            font-size: calc-em(24px);
+        }
+    }
+
+        
+    .section {
+        
+        &-404 {
+            padding-bottom: calc-em(114px);
+
+            @media (min-width: $mqDesktop){
+                display: flex;
+                gap: calc-em(120px);
+            }
+
+            &-title {
+                margin-right: calc-rem(-24px);
+                margin-bottom: calc-em(30px, 48px);
+
+                @media (min-width: $mqDesktop){
+                    margin-right: 0;
+                    margin-bottom: calc-em(36px, 64px);
+                    max-width: calc-rem(586px);
+                }
+            }
+            &-description {
+                margin-bottom: calc-em(66px, 18px);
+                
+                @media (min-width: $mqDesktop){
+                    margin-bottom: calc-em(64px, 24px);
+                    max-width: calc-rem(381px);
+                }
+            }
+        }
+
+    }
+
+    .btn {
+        display: inline-block;
+        padding: calc-em(24px) calc-em(43px);
+        font-family: var(--fontPrimary);
+        font-size: calc-em(14px);
+        font-weight: bold;
+        line-height: 1.5;
+        letter-spacing: -0.035em;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &--primary {
+            background-color: var(--gray1);
+            color: var(--white);
+            transition: background-color .6s ease-in;
+
+            &:hover, &:active {
+                background-color: var(--gray2);
+                transition: background-color .6s ease-in;
+            }
+        }
+    }
+
+
+.footer {
+    font-family: var(--fontSecondary);
+    font-weight: 500;
+    font-size: calc-em(14px);
+    line-height: 1.21;
+    color: var(--gray3);
+    text-align: center;
+
+    p {
+        margin: 0
+    }
+
+    a {
+        border-bottom: solid 1px currentColor;
+        font-weight: bold;
+        color: var(--gray3);
+        text-decoration: none;
+        transition: border-bottom-color .2s ease-in;
+        
+        &:hover {
+            border-bottom-color: var(--white);
+            transition: border-bottom-color .2s ease-in;
+        }
+    }
+}
